@@ -15,6 +15,8 @@ Route::get('/', function () {
     return redirect('/login');
 });
 
+Route::get('/client/create', "ClientsController@create");
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
