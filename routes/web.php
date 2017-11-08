@@ -15,7 +15,11 @@ Route::get('/', function () {
     return redirect('/login');
 });
 
-Route::get('/client/create', "ClientsController@create");
+Route::group(['middleware' => ['web']], function () {
+
+    Route::get('/client/create', "ClientsController@create");
+    Route::post('/client/create', "ClientsController@store");
+});
 
 Auth::routes();
 

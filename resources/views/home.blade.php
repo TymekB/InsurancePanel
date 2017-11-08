@@ -15,7 +15,6 @@
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th>Id</th>
                     <th>Firstname</th>
                     <th>Lastname</th>
                     <th>Insurance company</th>
@@ -27,7 +26,6 @@
 
                 @foreach($clients as $client)
                 <tr>
-                    <td>{{$client->id}}</td>
                     <td>{{$client->firstname}}</td>
                     <td>{{$client->lastname}}</td>
                     <td>{{$client->insurance_company}}</td>

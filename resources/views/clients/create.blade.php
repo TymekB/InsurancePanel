@@ -38,7 +38,7 @@
                                 </div>
 
                                 <div class="col-md-6">
-                                    {!! Form::select('insurance_company', ['Allianz' => 'Allianz', 'link4' => 'Link4', 'proama' => 'Proama', 'AXADirect' => 'AXADirect'], null, ['class'=>'form-control']); !!}
+                                    {!! Form::select('insurance_company', ['Allianz' => 'Allianz', 'link4' => 'Link4', 'Proama' => 'Proama', 'AXADirect' => 'AXADirect'], null, ['class'=>'form-control']); !!}
                                 </div>
                             </div>
 
@@ -62,6 +62,13 @@
                                 </div>
                             </div>
                         {!! Form::close() !!}
+
+                        @foreach($errors->all() as $error)
+                            <div class="alert alert-danger">
+                                {{$error}}
+                            </div>
+                        @endforeach
+
                     </div>
 
                     </div>
