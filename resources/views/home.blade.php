@@ -15,6 +15,7 @@
             <table class="table table-striped">
                 <thead>
                 <tr>
+                    <th>Id</th>
                     <th>Firstname</th>
                     <th>Lastname</th>
                     <th>Insurance company</th>
@@ -25,6 +26,7 @@
                 </thead>
                 <tbody>
                 <tr>
+                    <td>Id</td>
                     <td>John</td>
                     <td>Doe</td>
                     <td>20-10-2017</td>
