@@ -25,15 +25,17 @@
                 </tr>
                 </thead>
                 <tbody>
+                @foreach($clients as $client)
                 <tr>
-                    <td>Id</td>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>20-10-2017</td>
-                    <td>20-09-2017</td>
-                    <td>20-09-2017</td>
-                    <td>20-09-2017</td>
+                    <td>{{$client->id}}</td>
+                    <td>{{$client->firstname}}</td>
+                    <td>{{$client->lastname}}</td>
+                    <td>{{$client->insurance_company}}</td>
+                    <td>{{$client->expiration_date}}</td>
+                    <td>{{$client->created_at}}</td>
+                    <td>{{$client->updated_at}}</td>
                 </tr>
+                @endforeach
                 </tbody>
             </table>
         </div>
