@@ -26,6 +26,8 @@ class HomeController extends Controller
         $userId = auth()->user()->id;
         $user = User::find($userId);
 
-        return view('home')->with('clients', $user->clients);
+        $clients = $user->clients()->paginate(5);
+
+        return view('home')->with('clients', $clients);
     }
 }
