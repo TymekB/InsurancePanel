@@ -45,4 +45,16 @@ class ClientsController extends Controller
 
         return redirect('/home');
     }
+
+    public function destroy($id)
+    {
+        $client = Client::findOrFail($id);
+
+        if(auth()->user()->id == $client->user_id)
+        {
+            $client->delete();
+        }
+
+        return redirect('/home');
+    }
 }
