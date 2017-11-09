@@ -60,6 +60,29 @@ class ClientsController extends Controller
         return redirect('/home');
     }
 
+    public function update(Request $request, $id)
+    {
+        $client = Client::findOrFail($id);
+
+        $data = $request->validate([
+            'firstname' => 'required|alpha|min:3|max:20',
+            'lastname' => 'required|alpha|min:3|max:20',
+            'insurance_company' => 'required',
+            'expiration_date' => 'required|date'
+        ]);
+
+        $client = Client::findOrFail($id);
+
+        $client->firstname = $data['firstname'];
+        $client->lastname = $data['lastname'];
+        $client->insurance_company = $data['insurance_company'];
+        $client->expiration_date = $data['expiration_date'];
+
+        $client->save();
+
+        return redirect('/home');
+    }
+
     public function destroy($id)
     {
         $client = Client::findOrFail($id);
