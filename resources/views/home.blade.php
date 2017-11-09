@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container">
+
     <div class="panel panel-default">
         <div class="panel-heading">Dashboard</div>
 
@@ -11,8 +12,7 @@
                     {{ session('status') }}
                 </div>
             @endif
-
-            <table class="table table-striped">
+            <table class="table table-striped table-bordered">
                 <thead>
                 <tr>
                     <th>Firstname</th>
@@ -30,7 +30,7 @@
                     <td>{{$client->lastname}}</td>
                     <td>{{$client->insurance_company}}</td>
                     <td>{{$client->expiration_date}}</td>
-                    <td><a href="#" class="btn btn-default btn-sm">Edit</a> <a href="client/delete/{{$client->id}}" class="btn btn-danger btn-sm">Delete</a></td>
+                    <td><a href="/client/edit/{{$client->id}}" class="btn btn-default btn-sm">Edit</a> <a href="client/delete/{{$client->id}}" class="btn btn-danger btn-sm">Delete</a></td>
                 </tr>
                 @endforeach
                 </tbody>

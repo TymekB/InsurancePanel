@@ -21,6 +21,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/client/create', "ClientsController@store");
 
     Route::get('/client/delete/{id}', "ClientsController@destroy");
+
+    Route::get('/client/edit/{id}', "ClientsController@edit");
 });
 
 Auth::routes();

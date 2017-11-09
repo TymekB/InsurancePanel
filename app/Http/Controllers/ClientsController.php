@@ -22,6 +22,20 @@ class ClientsController extends Controller
         return view('clients.create');
     }
 
+    public function edit($id)
+    {
+        $client = Client::findOrFail($id);
+
+        if(auth()->user()->id == $client->user_id)
+        {
+            return view('clients.edit')->with('client', $client);
+        }
+        else
+        {
+            return redirect('/');
+        }
+    }
+
     public function store(Request $request)
     {
         $userId = auth()->user()->id;
