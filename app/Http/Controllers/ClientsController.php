@@ -62,8 +62,6 @@ class ClientsController extends Controller
 
     public function update(Request $request, $id)
     {
-        $client = Client::findOrFail($id);
-
         $data = $request->validate([
             'firstname' => 'required|alpha|min:3|max:20',
             'lastname' => 'required|alpha|min:3|max:20',
